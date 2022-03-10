@@ -47,7 +47,7 @@ def dataframe():
 
     url = 'https://www.tvo.fi/tuotanto/laitosyksikot/ol3/ol3ennusteet.html'
     try:
-        driver = webdriver.Firefox(executable_path=r'C:\Users\Nico\anaconda3\geckodriver.exe')
+        driver = webdriver.Firefox(executable_path=r'<fileLocation>')
         driver.get(url)
         driver.implicitly_wait(10)
         df = pd.read_html(driver.find_element_by_id("DataTables_Table_8").get_attribute('outerHTML'))[0]
