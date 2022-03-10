@@ -8,5 +8,5 @@ So it was a good fit.
 
 directly_to_sheets is the same idea as TVO-OL3.py, but this works only with Google Sheets, with no dummy csv-files.
 
-Check out the viz from (Tableau)[https://public.tableau.com/app/profile/cikoooo/viz/OL3-tuotantokoekytnaikana/Tabula]
+Check out the viz from [Tableau](https://public.tableau.com/app/profile/cikoooo/viz/OL3-tuotantokoekytnaikana/Tabula)
 
