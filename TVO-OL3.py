@@ -20,7 +20,7 @@ Connect to web with Firefox and try to find datatable. If not found within 10 se
 If datatable found, read it into a DataFrame and create DateTime-column and drop ID-col.
 '''
 try:
-    driver = webdriver.Firefox(executable_path=r'C:\Users\Nico\anaconda3\geckodriver.exe')
+    driver = webdriver.Firefox(executable_path=<fileLocation>')
     driver.get(url)
     driver.implicitly_wait(10)
     df = pd.read_html(driver.find_element_by_id("DataTables_Table_8").get_attribute('outerHTML'))[0]
