@@ -14,7 +14,7 @@ def google():
 
     # Get current data from web
     df = dataframe()
-    df["DateTime"] = df["DateTime"].dt.strftime('%Y-%d-%m %H:%M:%S')
+    df["DateTime"] = df["DateTime"].dt.strftime('%Y-%m-%d %H:%M:%S')
     df["DateTime"] = pd.to_datetime(df["DateTime"], format='%Y-%m-%d %H:%M:%S')
     
     print("Beginning transfer...")
@@ -47,11 +47,11 @@ def dataframe():
 
     url = 'https://www.tvo.fi/tuotanto/laitosyksikot/ol3/ol3ennusteet.html'
     try:
-        driver = webdriver.Firefox(executable_path=r'<fileLocation>')
+        driver = webdriver.Firefox(executable_path=r'C:\Users\Nico\anaconda3\geckodriver.exe')
         driver.get(url)
         driver.implicitly_wait(10)
         df = pd.read_html(driver.find_element_by_id("DataTables_Table_8").get_attribute('outerHTML'))[0]
-        df["DateTime"] = pd.to_datetime(df["Pvm"] + " " + df["Tunti"])
+        df["DateTime"] = pd.to_datetime(df["Pvm"] + " " + df["Tunti"], format='%d.%m.%Y %H:%M')
         df = df.drop(columns="ID")
         driver.quit()
     except:
